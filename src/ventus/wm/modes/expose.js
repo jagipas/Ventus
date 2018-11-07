@@ -11,21 +11,21 @@ define(['lodash.throttle', 'ventus/less/expose.less'], function(throttle) {
     register() {
       console.log('Expose mode registered.');
 
-      this.view.on(
-        'contextmenu',
-        throttle(event => {
-          // Right click sets expose mode.
-          if (this.mode !== 'expose') {
-            if (this.windows.length > 0) {
-              this.mode = 'expose';
-            }
-          } else if (this.mode === 'expose') {
-            this.mode = 'default';
-          }
-					event.stopPropagation();
-					event.preventDefault();
-        }, 1000)
-      );
+      // this.view.on(
+      //   'contextmenu',
+      //   throttle(event => {
+      //     // Right click sets expose mode.
+      //     if (this.mode !== 'expose') {
+      //       if (this.windows.length > 0) {
+      //         this.mode = 'expose';
+      //       }
+      //     } else if (this.mode === 'expose') {
+      //       this.mode = 'default';
+      //     }
+			// 		event.stopPropagation();
+			// 		event.preventDefault();
+      //   }, 1000)
+      // );
     },
 
     // Launch when plugin is enabled.
