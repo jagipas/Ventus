@@ -13,13 +13,13 @@ define([
 ], function(Window, View, DefaultMode, ExposeMode) {
   'use strict';
 
-  const WindowManager = function() {
+  const WindowManager = function(container) {
     let createWindow;
 
     this.view = new View(
       '<div class="wm-space"><div class="wm-overlay" /></div>'
     );
-    document.body.insertBefore(this.view.el, document.body.firstChild);
+    (container ? container : document.body).prepend(this.view.el);
 
     this.$overlay = this.view.find('.wm-overlay');
     this.$overlay.zIndex = this._baseZ - 1;

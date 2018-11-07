@@ -2597,11 +2597,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ventus/wm/window */ "./ventus/wm/window.js"), __webpack_require__(/*! ventus/core/view */ "./ventus/core/view.js"), __webpack_require__(/*! ventus/wm/modes/default */ "./ventus/wm/modes/default.js"), __webpack_require__(/*! ventus/wm/modes/expose */ "./ventus/wm/modes/expose.js"), __webpack_require__(/*! ventus/less/windowmanager.less */ "./ventus/less/windowmanager.less")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Window, View, DefaultMode, ExposeMode) {
   'use strict';
 
-  var WindowManager = function WindowManager() {
+  var WindowManager = function WindowManager(container) {
     var createWindow = void 0;
 
     this.view = new View('<div class="wm-space"><div class="wm-overlay" /></div>');
-    document.body.insertBefore(this.view.el, document.body.firstChild);
+    (container ? container : document.body).prepend(this.view.el);
 
     this.$overlay = this.view.find('.wm-overlay');
     this.$overlay.zIndex = this._baseZ - 1;
