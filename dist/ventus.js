@@ -2022,7 +2022,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
     }
 
     // View
-    this.view = new View('<div class=\'wm-window ' + options.classname + '\'>\n      <div class=\'wm-window-box\'>\n        <header class=\'wm-window-title\' unselectable=\'on\'>\n          <h1 unselectable=\'on\'>' + options.title + '</h1>\n          <div class=\'wm-button-group\'>\n            <button class=\'wm-minimize\'>&nbsp;</button>\n            <button class=\'wm-maximize\'>&nbsp;</button>\n            <button class=\'wm-close\'>&nbsp;</button>\n          </div>\n        </header>\n\n        <section class=\'wm-content\'></section>\n\n        <button class=\'wm-resize\'>&nbsp;</button>\n      </div>\n      <div class=\'wm-window-overlay\'></div>\n    </div>');
+    this.view = new View('<div class=\'wm-window ' + options.classname + '\'>\n      <div class=\'wm-window-box\'>\n        <header class=\'wm-window-title\' unselectable=\'on\'>\n          ' + (options.icon ? '<i class="fas fa-' + options.icon + '" style="color:white"></i>' : '') + '\n          <h1 unselectable=\'on\'>' + options.title + '</h1>\n          <div class=\'wm-button-group\'>\n            <button class=\'wm-minimize\'>&nbsp;</button>\n            <button class=\'wm-maximize\'>&nbsp;</button>\n            <button class=\'wm-close\'>&nbsp;</button>\n          </div>\n        </header>\n\n        <section class=\'wm-content\'></section>\n\n        <button class=\'wm-resize\'>&nbsp;</button>\n      </div>\n      <div class=\'wm-window-overlay\'></div>\n    </div>');
     this.view.listen(this.events.window, this);
 
     if (options.opacity) {
