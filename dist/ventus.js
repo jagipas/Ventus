@@ -96,7 +96,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/expose.less":
+/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/expose.less":
 /*!*************************************************************************************************************************************************!*\
   !*** ../node_modules/css-loader!../node_modules/postcss-loader/lib!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/expose.less ***!
   \*************************************************************************************************************************************************/
@@ -115,7 +115,7 @@ exports.push([module.i, "/**\n * Ventus\n * Copyright © 2012-2013 Ramón Lamana
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/window.less":
+/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/window.less":
 /*!*************************************************************************************************************************************************!*\
   !*** ../node_modules/css-loader!../node_modules/postcss-loader/lib!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/window.less ***!
   \*************************************************************************************************************************************************/
@@ -134,7 +134,7 @@ exports.push([module.i, "/**\n * Ventus\n * Copyright © 2012-2013 Ramón Lamana
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/windowmanager.less":
+/***/ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/windowmanager.less":
 /*!********************************************************************************************************************************************************!*\
   !*** ../node_modules/css-loader!../node_modules/postcss-loader/lib!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/windowmanager.less ***!
   \********************************************************************************************************************************************************/
@@ -1678,7 +1678,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./expose.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/expose.less");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./expose.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/expose.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1708,7 +1708,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./window.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/window.less");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./window.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/window.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1738,7 +1738,7 @@ if(false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./windowmanager.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js??ref--6-3!./ventus/less/windowmanager.less");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/postcss-loader/lib!../../../node_modules/less-loader/dist/cjs.js??ref--6-3!./windowmanager.less */ "../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js!../node_modules/less-loader/dist/cjs.js?!./ventus/less/windowmanager.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1825,28 +1825,29 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
   var ExposeMode = {
     // Launch when plugin is registered.
     register: function register() {
-      var _this = this;
-
       console.log('Expose mode registered.');
 
-      this.view.on('contextmenu', throttle(function (event) {
-        // Right click sets expose mode.
-        if (_this.mode !== 'expose') {
-          if (_this.windows.length > 0) {
-            _this.mode = 'expose';
-          }
-        } else if (_this.mode === 'expose') {
-          _this.mode = 'default';
-        }
-        event.stopPropagation();
-        event.preventDEfault();
-      }, 1000));
+      // this.view.on(
+      //   'contextmenu',
+      //   throttle(event => {
+      //     // Right click sets expose mode.
+      //     if (this.mode !== 'expose') {
+      //       if (this.windows.length > 0) {
+      //         this.mode = 'expose';
+      //       }
+      //     } else if (this.mode === 'expose') {
+      //       this.mode = 'default';
+      //     }
+      // 		event.stopPropagation();
+      // 		event.preventDefault();
+      //   }, 1000)
+      // );
     },
 
 
     // Launch when plugin is enabled.
     plug: function plug() {
-      var _this2 = this;
+      var _this = this;
 
       var grid = Math.ceil(this.windows.length / 2);
       var maxWidth = Math.floor(this.view.width / grid);
@@ -1859,7 +1860,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
       this.view.el.classList.add('expose');
 
       var _loop = function _loop(_win, i, len) {
-        _win = _this2.windows[i];
+        _win = _this.windows[i];
         _win.stamp();
 
         // Scale factor.
@@ -1907,22 +1908,22 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
       this.overlay = true;
       this.view.one('click', function () {
-        _this2.mode = 'default';
+        _this.mode = 'default';
       });
     },
 
 
     // Lauch when plugin is disabled
     unplug: function unplug() {
-      var _this3 = this;
+      var _this2 = this;
 
       return new Promise(function (done) {
-        if (_this3.windows.length === 0) {
+        if (_this2.windows.length === 0) {
           done();
         }
 
-        for (var _win2, i = _this3.windows.length; i--;) {
-          _win2 = _this3.windows[i];
+        for (var _win2, i = _this2.windows.length; i--;) {
+          _win2 = _this2.windows[i];
           _win2.restore();
           _win2.view.el.style.transform = 'scale(1)';
           _win2.view.el.style.transformOrigin = '50% 50%';
@@ -1937,18 +1938,18 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
           }(_win2, i);
 
           if (_win2.animations) {
-            _this3.view.onTransitionEnd(removeTransform, _this3);
+            _this2.view.onTransitionEnd(removeTransform, _this2);
           } else {
-            removeTransform.call(_this3);
+            removeTransform.call(_this2);
           }
 
           _win2.movable = true;
           _win2.enabled = true;
         }
 
-        _this3.overlay = false;
+        _this2.overlay = false;
       }).then(function () {
-        _this3.view.el.classList.remove('expose');
+        _this2.view.el.classList.remove('expose');
       });
     },
 
@@ -2021,7 +2022,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 		}
 
 		// View
-		this.view = new View('<div class="wm-window ' + options.classname + '">\n      <div class="wm-window-box">\n        <header class="wm-window-title" unselectable="on">\n          <h1 unselectable="on">' + options.title + '</h1>\n          <div class="wm-button-group">\n            <button class="wm-minimize">&nbsp;</button>\n            <button class="wm-maximize">&nbsp;</button>\n            <button class="wm-close">&nbsp;</button>\n          </div>\n        </header>\n\n        <section class="wm-content"></section>\n\n        <button class="wm-resize">&nbsp;</button>\n      </div>\n      <div class="wm-window-overlay"></div>\n    </div>');
+		this.view = new View('<div class="wm-window ' + options.classname + '">\n      <div class="wm-window-box">\n\t\t\t\t<header class="wm-window-title" unselectable="on">\n\t\t\t\t\t' + (options.icon ? '<i class="fas fa-' + options.icon + '" style="color:white"></i>' : '') + '\n          <h1 unselectable="on">' + options.title + '</h1>\n          <div class="wm-button-group">\n            <button class="wm-minimize">&nbsp;</button>\n            <button class="wm-maximize">&nbsp;</button>\n            <button class="wm-close">&nbsp;</button>\n          </div>\n        </header>\n\n        <section class="wm-content"></section>\n\n        <button class="wm-resize">&nbsp;</button>\n      </div>\n      <div class="wm-window-overlay"></div>\n    </div>');
 		this.view.listen(this.events.window, this);
 
 		if (options.opacity) {
