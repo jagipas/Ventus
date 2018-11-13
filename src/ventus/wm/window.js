@@ -45,7 +45,8 @@ function(Emitter, View) {
 		// View
 		this.view = new View(`<div class="wm-window ${options.classname}">
       <div class="wm-window-box">
-        <header class="wm-window-title" unselectable="on">
+				<header class="wm-window-title" unselectable="on">
+					${options.icon ? `<i class="fas fa-${options.icon}" style="color:white"></i>` : '' }
           <h1 unselectable="on">${options.title}</h1>
           <div class="wm-button-group">
             <button class="wm-minimize">&nbsp;</button>
